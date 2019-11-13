@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
-
-export default class Home extends Component {
+import {connect} from 'dva'
+class Home extends Component {
     render() {
+        console.log(this.props.home)
         return (
             <div>
-                首页
+                {this.props.title}
             </div>
         )
     }
 }
+
+export default connect(state=>state.home)(Home)

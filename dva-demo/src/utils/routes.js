@@ -12,14 +12,19 @@ const renderRoutes=(routesConfig,app)=>{
         // 实现按需加载第三部
        
     // })
-    return routesConfig.map(({path="/",component,exact=false,routes})=>{
+    return routesConfig.map(({path="/",component,models=[],auth, exact=false,routes})=>{
         return<Route 
             path={path}
             exact={exact}
             key ={path}
             component={dynamic({
                 app,
+                models:()=>models,
                 component:()=>{
+                    // 权限认证
+                    if(auth&&!localStorage.getItem('login')){
+                        return ()=><Redirect to="/signin" />
+                    }
                     return component().then(result=>{
                         // 判断是es6
                             console.log(result)

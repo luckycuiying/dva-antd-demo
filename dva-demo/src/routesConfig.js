@@ -15,13 +15,15 @@ export default[
         routes:[
             {
                 path:'/home', 
+                models:[import('./models/home')],
                 // 按需加载第一步
                 component:()=>import ('./routes/Home'),
                 redirect:true
             },
             {
                 path:'/profile',
-                component:()=>import ('./routes/Profile')
+                component:()=>import ('./routes/Profile'),
+                auth:true // 添加权限验证
             },
             {
                 path:'/signIn',
