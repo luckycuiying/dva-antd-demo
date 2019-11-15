@@ -3,11 +3,11 @@ import { connect } from 'dva';
 import {Layout} from 'antd'
 import {Route,Switch,Redirect} from 'dva/router'
 import NavHeader from '../components/NavHeader'
-import Home from './Home'
-import Profile from './Profile'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
-import User from './User'
+// import Home from './Home'
+// import Profile from './Profile'
+// import SignIn from './SignIn'
+// import SignUp from './SignUp'
+// import User from './User'
 import {renderRoutes,renderRedirect} from '../utils/routes'
 const { Header, Content, Footer} =Layout;
 function IndexPage(props) {
